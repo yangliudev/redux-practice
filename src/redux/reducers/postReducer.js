@@ -1,16 +1,17 @@
-import { SELECTED_SHOP_ITEM } from "../actions/constants";
+import { FETCH_POSTS } from "../actions/types";
 
 const initialState = {
-  shopObject: {},
+  items: [],
+  item: {},
 };
 
 const shopReducer = (state = initialState, action) => {
   console.log("entered shopReducer");
   switch (action.type) {
-    case SELECTED_SHOP_ITEM:
+    case FETCH_POSTS:
       return {
         ...state,
-        shopObject: action.payload,
+        items: action.payload,
       };
     default:
       return state;

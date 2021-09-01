@@ -1,1 +1,0 @@
-export const SELECTED_SHOP_ITEM = "SELECTED_SHOP_ITEM";

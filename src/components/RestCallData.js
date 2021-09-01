@@ -1,15 +1,18 @@
 import React from "react";
-
-import { fetchJSON } from "../redux/actions/shopActions";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchJSON } from "../redux/actions/postActions";
 
 const RestCallData = () => {
+  const jsonData = useSelector((state) => state.post);
+  const dispatch = useDispatch();
   React.useEffect(() => {
-    fetchJSON();
-  }, []);
+    dispatch(fetchJSON());
+    console.log("post fetchJSON");
+  }, [dispatch]);
 
   return (
     <div>
-      <h2>rest call</h2>
+      <h2>rest call {JSON.stringify(jsonData)}</h2>
     </div>
   );
 };

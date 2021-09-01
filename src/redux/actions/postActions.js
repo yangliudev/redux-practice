@@ -1,11 +1,12 @@
-import { SELECTED_SHOP_ITEM } from "./constants";
+import { FETCH_POSTS } from "./types";
 
 export const fetchJSON = () => (dispatch) => {
+  console.log("entered postActions");
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then((res) => res.json())
     .then((posts) =>
       dispatch({
-        constant: SELECTED_SHOP_ITEM,
+        type: FETCH_POSTS,
         payload: posts,
       })
     );
